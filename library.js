@@ -6,14 +6,19 @@ const myLibrary = []
  const authorInput = document.querySelector('#author');
  const pagesInput = document.querySelector('#pages');
  const table = document.querySelector('table');
- const deleteButton = document.createElement('button');
-
+ 
+  function Book(title, author, pages, read) {
+     this.title = title;
+     this.author = author;
+     this.pages = pages;
+ };
  
  function addNewBook() {
- 
- 
+
+
  let newObject = {
  }
+ 
  
  
  newObject.title = `${titleInput.value}`;
@@ -27,17 +32,26 @@ const myLibrary = []
  const title = document.createElement('td');
  const author = document.createElement('td');
  const pages = document.createElement('td');
- 
+ const deleteButton = document.createElement('button');
+
  title.innerText = `${newObject.title}`;
  author.innerText = `${newObject.author}`;
  pages.innerText = `${newObject.pages}`;
- deleteButton.innerText = 'delete';
+ deleteButton.innerText = 'delete'
  tr.appendChild(title);
  tr.appendChild(author);
  tr.appendChild(pages);
  tr.appendChild(deleteButton);
  table.appendChild(tr);
-    
+   
+ 
+ function deleteBook() {
+    myLibrary.pop(newObject);
+    console.log(myLibrary);
+    table.removeChild(tr).closest(deleteButton)
+ }
+
+ deleteButton.addEventListener('click', deleteBook)
 }
  
  
@@ -49,7 +63,6 @@ const myLibrary = []
         console.log(myLibrary)
     }
  })
- 
  
 
 
