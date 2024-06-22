@@ -20,6 +20,24 @@ function openModal() {
 
 
 button.addEventListener('click', openModal);
+closeButton.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal)
+
+
+
+
+function closeModal() {
+   modal.classList.add('hidden');
+   overlay.classList.add('hidden');
+}
+
+
+
+document.addEventListener('keydown', function (e) {
+   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+       closeModal()
+   }
+})
 
 
 
