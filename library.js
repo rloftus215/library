@@ -6,7 +6,7 @@ const myLibrary = []
  const authorInput = document.querySelector('#author');
  const pagesInput = document.querySelector('#pages');
  const table = document.querySelector('table');
- 
+ const deleteButton = document.createElement('button');
 
  
  function addNewBook() {
@@ -27,7 +27,7 @@ const myLibrary = []
  const title = document.createElement('td');
  const author = document.createElement('td');
  const pages = document.createElement('td');
- const deleteButton = document.createElement('button');
+ 
  title.innerText = `${newObject.title}`;
  author.innerText = `${newObject.author}`;
  pages.innerText = `${newObject.pages}`;
