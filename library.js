@@ -69,13 +69,18 @@ const myLibrary = []
  deleteButton.addEventListener('click', deleteBook)
 }
  
- 
+ function clearInput() {
+   titleInput.value = '';
+   authorInput.value = '';
+   pagesInput.value = '';
+ }
  
  document.addEventListener('keydown', function (e) {
     if(e.key === 'Enter' && !modal.classList.contains('hidden')) {
         closeModal();
         addNewBook();
-        console.log(myLibrary)
+        console.log(myLibrary);
+        clearInput()
     }
  })
  
