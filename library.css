@@ -69,3 +69,15 @@ table{
     left: 150px
 
 }
+
+.add-btn{
+    position: relative;
+    left: 252px;
+    top: 50px;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #050814;
+    color: white;
+    border: 2px solid rgb(151, 149, 149);
+}
