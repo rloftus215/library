@@ -37,7 +37,8 @@ const myLibrary = []
  title.innerText = `${newObject.title}`;
  author.innerText = `${newObject.author}`;
  pages.innerText = `${newObject.pages}`;
- deleteButton.innerText = 'delete'
+ deleteButton.innerText = 'Delete'
+ deleteButton.setAttribute('id', 'book-btn');
  tr.appendChild(title);
  tr.appendChild(author);
  tr.appendChild(pages);
@@ -46,9 +47,13 @@ const myLibrary = []
    
  
  function deleteBook() {
-    myLibrary.pop(newObject);
-    console.log(myLibrary);
-    table.removeChild(tr).closest(deleteButton)
+   myLibrary.splice(0, myLibrary.length);
+
+   console.log(myLibrary)
+
+   const books = Array.from(tr.children);
+ 
+   books.forEach((book) => book.remove());
  }
 
  deleteButton.addEventListener('click', deleteBook)
