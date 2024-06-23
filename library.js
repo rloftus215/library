@@ -34,6 +34,16 @@ const myLibrary = []
  const pages = document.createElement('td');
  const deleteButton = document.createElement('button');
 
+ deleteButton.setAttribute('style', 'margin-left: 5px; background-color: red; color: white; border-radius: 10px; padding: 2px')
+
+ function addStyle(info) {
+   info.setAttribute('style', 'border: 1px solid black; text-align: center; background-color: rgb(205, 205, 205)')
+ }
+
+ addStyle(title)
+ addStyle(author);
+ addStyle(pages);
+
  title.innerText = `${newObject.title}`;
  author.innerText = `${newObject.author}`;
  pages.innerText = `${newObject.pages}`;
