@@ -65,6 +65,13 @@ function libraryUi() {
   deleteButton.addEventListener('click', deleteBook)
 }
 
+function clearInput() {
+  titleInput.value = "";
+  authorInput.value = "";
+  pagesInput.value = "";
+  readInput.value = "";
+}
+
  
 
 
