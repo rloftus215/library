@@ -16,6 +16,11 @@ const pagesInput = document.querySelector('#pages');
 const readInput = document.querySelector('#read');
 const table = document.querySelector('table')
 
+function addBookToLibrary() {
+  const newBooks = new Book(titleInput.value, authorInput,value, pagesInput.value, readInput.value)
+
+  library.push(newBooks)
+}
 
 
 
