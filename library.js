@@ -10,6 +10,12 @@ function Book(title, author, pages, read) {
   }
 }
 
+const titleInput = document.querySelector('#title');
+const authorInput = document.querySelector('#author');
+const pagesInput = document.querySelector('#pages');
+const readInput = document.querySelector('#read');
+const table = document.querySelector('table')
+
 
 
 
