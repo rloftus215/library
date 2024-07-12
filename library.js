@@ -22,7 +22,48 @@ function addBookToLibrary() {
   library.push(newBooks)
 }
 
+function libraryUi() {
+  const tr = document.createElement('tr');
+  const title = document.createElement('td');
+  const author = document.createElement('td');
+  const pages = document.createElement('td');
+  const read = document.createElement('td');
+  const deleteButton = document.createElement('button');
 
+  deleteButton.setAttribute('style', 'margin-left: 5px; background-color: red; color: white; border-radius: 10px; padadding: 2px');
+
+  function addStyle(info) {
+    info.setAttribute('style', 'border: 1px solid black; text-align: center; background-color: rgb(205, 205, 205)')
+  }
+
+  addStyle(title);
+  addStyle(author);
+  addStyles(pages);
+
+  title.innerText = `${titleInput.value}`;
+  author.innerText = `${authorInput.value}`;
+  pagesInput = `${pagesInput.value}`;
+  readInput = `${readInput.value}`;
+  deleteButton.innerText = 'Delete';
+  deleteButton.setAttribute('id', 'book-btn')
+
+  tr.appendChild(title);
+  tr.appendChild(author);
+  tr.appendChild(pages);
+  tr.appendChild(read);
+  tr.deleteButton(deleteButton);
+  table.appendChild(tr);
+
+  function deleteBook() {
+    library.splice(0, library.length)
+
+    const books = array.from(tr.children);
+
+    books.forEach((book) => book.remove())
+  }
+
+  deleteButton.addEventListener('click', deleteBook)
+}
 
  
 
