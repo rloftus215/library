@@ -72,6 +72,15 @@ function clearInput() {
   readInput.value = "";
 }
 
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' && !modal.classList.contains('hidden')) {
+    closeModal();
+    addBookToLibrary()
+    libraryUi();
+    clearInput();
+  }
+})
+
  
 
 
