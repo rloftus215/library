@@ -17,7 +17,7 @@ const readInput = document.querySelector('#read');
 const table = document.querySelector('table')
 
 function addBookToLibrary() {
-  const newBooks = new Book(titleInput.value, authorInput,value, pagesInput.value, readInput.value)
+  const newBooks = new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.value)
 
   library.push(newBooks)
 }
@@ -38,12 +38,12 @@ function libraryUi() {
 
   addStyle(title);
   addStyle(author);
-  addStyles(pages);
+  addStyle(pages);
 
   title.innerText = `${titleInput.value}`;
   author.innerText = `${authorInput.value}`;
-  pagesInput = `${pagesInput.value}`;
-  readInput = `${readInput.value}`;
+  pagesInput.innerText = `${pagesInput.value}`;
+  readInput.innerText = `${readInput.value}`;
   deleteButton.innerText = 'Delete';
   deleteButton.setAttribute('id', 'book-btn')
 
@@ -51,13 +51,13 @@ function libraryUi() {
   tr.appendChild(author);
   tr.appendChild(pages);
   tr.appendChild(read);
-  tr.deleteButton(deleteButton);
+  tr.appendChild(deleteButton);
   table.appendChild(tr);
 
   function deleteBook() {
     library.splice(0, library.length)
 
-    const books = array.from(tr.children);
+    const books = Array.from(tr.children);
 
     books.forEach((book) => book.remove())
   }
@@ -78,6 +78,7 @@ document.addEventListener('keydown', function (e) {
     addBookToLibrary()
     libraryUi();
     clearInput();
+    console.log(library)
   }
 })
 
