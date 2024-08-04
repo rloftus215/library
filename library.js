@@ -39,11 +39,12 @@ function libraryUi() {
   addStyle(title);
   addStyle(author);
   addStyle(pages);
+  addStyle(read);	
 
   title.innerText = `${titleInput.value}`;
   author.innerText = `${authorInput.value}`;
-  pagesInput.innerText = `${pagesInput.value}`;
-  readInput.innerText = `${readInput.value}`;
+  pages.innerText = `${pagesInput.value}`;
+  read.innerText = `${readInput.value}`;
   deleteButton.innerText = 'Delete';
   deleteButton.setAttribute('id', 'book-btn')
 
@@ -63,7 +64,15 @@ function libraryUi() {
   }
 
   deleteButton.addEventListener('click', deleteBook)
-}
+
+  read.addEventListener('click', ()=> {
+    if (read.innerText === 'read') {
+      read.innerText = 'not read';
+    } else if (read.innerText === 'not read') {
+      read.innerText = 'read';
+    };
+  });
+};
 
 function clearInput() {
   titleInput.value = "";
